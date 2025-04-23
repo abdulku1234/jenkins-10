@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Example') {
             steps {
-                echo 'jenkins it works successfully'
+                echo 'jenkins it works successfully my'
             }
         }
     }
