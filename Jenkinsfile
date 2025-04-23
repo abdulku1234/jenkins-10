@@ -1,12 +1,19 @@
 pipeline {
     agent any
+
     tools {
-        nodejs 'NodeJS 23.11.0'  // <-- this must match exactly the name you gave!
+        nodejs 'NodeJS 23.11.0'   // <- Must match EXACTLY the NodeJS installer name you added in Jenkins
     }
+
     stages {
-        stage('Print Node Version') {
+        stage('Install Dependencies') {
             steps {
-                sh 'node -v'
+                sh 'npm install'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'npm run build'
             }
         }
     }
